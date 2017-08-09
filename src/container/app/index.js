@@ -1,10 +1,9 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom'
-import Home from '../home'
-import About from '../about'
-import { connect } from 'react-redux'
+import { Route, Link } from 'react-router-dom';
+import Home from '../home';
+import About from '../about';
 
-const App = (props) => (
+const App = props =>
   <div>
     <header>
       <Link to="/">Home</Link>
@@ -12,24 +11,9 @@ const App = (props) => (
     </header>
 
     <main>
-      <Route exact path="/" component={(...args) => 
-      {
-        console.log(args, props)
-        debugger
-        return (<Home/>);
-      }
-      } />
+      <Route exact path="/" component={Home} />
       <Route exact path="/about-us" component={About} />
     </main>
-  </div>
-)
+  </div>;
 
-const mapStateToProps = state => ({
-  count: state.counter.count,
-  isIncrementing: state.counter.isIncrementing,
-  isDecrementing: state.counter.isDecrementing
-})
-
-export default connect(
-  mapStateToProps
-)(App)
+export default App;
