@@ -1,5 +1,5 @@
-const API_URL = process.env.API_URL;
+const API_URL = process.env.REACT_APP_API_URL;
 
 export function login(username, password) {
-    fetch(`${API_URL}/`, {})
+  fetch(`${API_URL}/user`, {});
 }
