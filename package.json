@@ -32,10 +32,13 @@
     "precommit": "lint-staged",
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "eslint-plugin-prettier": "^2.2.0",
     "husky": "^0.14.3",
     "lint-staged": "^4.0.3",
     "prettier": "^1.5.3"
