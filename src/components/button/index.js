@@ -3,7 +3,7 @@ import Proptypes from "prop-types";
 
 const Button = ({ block, size, styled, loading, text, ...rest }) => {
   const classes = `${block ? "btn-block" : ""} 
-       ${size ? `btn-${size}` : ""} 
+    ${size ? `btn-${size}` : ""} 
     ${styled ? `btn-${styled}` : ""}`;
 
   return (
