@@ -1,16 +1,16 @@
-import React from 'react';
-import Proptypes from 'prop-types';
-import cs from 'classnames';
+import React from "react";
+import Proptypes from "prop-types";
+import cs from "classnames";
 
 const Alert = ({ close, title, children, warning, success, info, danger }) => {
   return (
     <div
       className={`alert ${cs({
-        'alert-dismissible': close,
-        'alert-warning': warning,
-        'alert-success': success,
-        'alert-info': info,
-        'alert-danger': danger
+        "alert-dismissible": close,
+        "alert-warning": warning,
+        "alert-success": success,
+        "alert-info": info,
+        "alert-danger": danger
       })}`}
     >
       {close &&
