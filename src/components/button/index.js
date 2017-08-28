@@ -1,10 +1,10 @@
-import React from 'react';
-import Proptypes from 'prop-types';
+import React from "react";
+import Proptypes from "prop-types";
 
 const Button = ({ block, size, styled, loading, text, ...rest }) => {
-  const classes = `${block ? 'btn-block' : ''} 
-    ${size ? `btn-${size}` : ''} 
-    ${styled ? `btn-${styled}` : ''}`;
+  const classes = `${block ? "btn-block" : ""} 
+       ${size ? `btn-${size}` : ""} 
+    ${styled ? `btn-${styled}` : ""}`;
 
   return (
     <button className={`btn ${classes}`} {...rest}>
