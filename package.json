@@ -2,6 +2,9 @@
   "name": "curriculum-admin",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "8.2.0"
+  },
   "dependencies": {
     "bootstrap": "^3.3.7",
     "classnames": "^2.2.5",
