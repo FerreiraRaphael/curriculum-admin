@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Alert from '../alert';
+import React from "react";
+import PropTypes from "prop-types";
+import Alert from "../alert";
 
 const Form = ({ className, children, formErrors, ...rest }) =>
-  <form className={className || ''} {...rest}>
+  <form className={className || ""} {...rest}>
     {!!formErrors.length &&
       <Alert close danger>
         <ul>

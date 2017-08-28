@@ -1,16 +1,16 @@
-import React from 'react';
-import { Route } from 'react-router-dom';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import Home from '../home';
-import About from '../about';
-import Logout from '../logout';
-import LoginScreen from '../../screen/login';
-import Nav from '../../components/nav';
-import Navlink from '../../components/navlink';
-import RedirectRoute from '../../components/redirectRoute';
-import Loading from '../../components/loading';
-import { loadUser } from '../../modules/auth';
+import React from "react";
+import { Route } from "react-router-dom";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import Home from "../home";
+import About from "../about";
+import Logout from "../logout";
+import LoginScreen from "../../screen/login";
+import Nav from "../../components/nav";
+import Navlink from "../../components/navlink";
+import RedirectRoute from "../../components/redirectRoute";
+import Loading from "../../components/loading";
+import { loadUser } from "../../modules/auth";
 
 class App extends React.Component {
   componentDidMount() {
@@ -24,12 +24,12 @@ class App extends React.Component {
       ? <Loading />
       : <div>
           <Nav brand="Home">
-            <Navlink to="/about-us" active={location === '/about-us'}>
+            <Navlink to="/about-us" active={location === "/about-us"}>
               About
             </Navlink>
             {this.props.loggedIn
               ? <Navlink to="/logout">Logout</Navlink>
-              : <Navlink to="/login" active={location === '/login'}>
+              : <Navlink to="/login" active={location === "/login"}>
                   Login
                 </Navlink>}
           </Nav>

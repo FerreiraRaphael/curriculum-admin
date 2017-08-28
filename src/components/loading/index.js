@@ -1,6 +1,6 @@
-import React from 'react';
-import Proptypes from 'prop-types';
-import './style.css';
+import React from "react";
+import Proptypes from "prop-types";
+import "./style.css";
 
 const Alert = ({ size }) => {
   return (

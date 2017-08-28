@@ -1,13 +1,13 @@
-import React from 'react';
-import { push } from 'react-router-redux';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import React from "react";
+import { push } from "react-router-redux";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
 import {
   increment,
   incrementAsync,
   decrement,
   decrementAsync
-} from '../../modules/counter';
+} from "../../modules/counter";
 
 const Home = props =>
   <div>
@@ -54,7 +54,7 @@ const mapDispatchToProps = dispatch =>
       incrementAsync,
       decrement,
       decrementAsync,
-      changePage: () => push('/about-us')
+      changePage: () => push("/about-us")
     },
     dispatch
   );

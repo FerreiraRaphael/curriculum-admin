@@ -1,8 +1,8 @@
-import React from 'react';
-import { Redirect } from 'react-router-dom';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { logout } from '../../modules/auth';
+import React from "react";
+import { Redirect } from "react-router-dom";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import { logout } from "../../modules/auth";
 
 class Logout extends React.Component {
   componentDidMount() {

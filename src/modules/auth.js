@@ -1,14 +1,14 @@
-import { GET, POST } from '../lib/requests';
+import { GET, POST } from "../lib/requests";
 
 //Actions
-const LOGIN = 'auth/LOGIN';
-const LOGIN_SUCCESS = 'auth/LOGIN_SUCCESS';
-const LOGIN_FAIL = 'auth/LOGIN_FAIL';
-const LOGOUT = 'auth/LOGOUT';
-const LOGOUT_SUCCESS = 'auth/LOGOUT_SUCCESS';
-const LOADING = 'auth/LOADING';
-const LOADING_SUCCESS = 'auth/LOADING_SUCCESS';
-const LOADING_FAIL = 'auth/LOADING_FAIL';
+const LOGIN = "auth/LOGIN";
+const LOGIN_SUCCESS = "auth/LOGIN_SUCCESS";
+const LOGIN_FAIL = "auth/LOGIN_FAIL";
+const LOGOUT = "auth/LOGOUT";
+const LOGOUT_SUCCESS = "auth/LOGOUT_SUCCESS";
+const LOADING = "auth/LOADING";
+const LOADING_SUCCESS = "auth/LOADING_SUCCESS";
+const LOADING_FAIL = "auth/LOADING_FAIL";
 
 const initialState = {
   loading: false,
@@ -105,17 +105,17 @@ export const login = data => {
   return async dispatch => {
     dispatch(logginIn());
     try {
-      const result = await POST('users/auth', data);
+      const result = await POST("users/auth", data);
       if (result.success) {
         dispatch(logginSuccess(result.data.user));
-        localStorage.setItem('token', result.data.token);
+        localStorage.setItem("token", result.data.token);
       } else {
         dispatch(logginError(result));
-        localStorage.setItem('token', '');
+        localStorage.setItem("token", "");
       }
     } catch (e) {
       dispatch(logginError(e));
-      localStorage.setItem('token', '');
+      localStorage.setItem("token", "");
     }
   };
 };
@@ -132,7 +132,7 @@ export const logout = data => {
   return dispatch => {
     dispatch(logginOut());
     dispatch(logoutSuccess());
-    localStorage.setItem('token', '');
+    localStorage.setItem("token", "");
   };
 };
 
@@ -154,16 +154,16 @@ export const loadUser = () => {
   return async dispatch => {
     dispatch(loading());
     try {
-      const result = await GET('users/me');
+      const result = await GET("users/me");
       if (result.success) {
         dispatch(loadingSuccess(result.data));
       } else {
         dispatch(loadingFail(result));
-        localStorage.setItem('token', '');
+        localStorage.setItem("token", "");
       }
     } catch (e) {
       dispatch(loadingFail(e));
-      localStorage.setItem('token', '');
+      localStorage.setItem("token", "");
     }
   };
 };

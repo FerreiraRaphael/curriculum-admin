@@ -1,10 +1,10 @@
-import React from 'react';
-import Proptypes from 'prop-types';
+import React from "react";
+import Proptypes from "prop-types";
 
 const className = ({ error, touched }) => {
-  if (error && touched) return 'has-error';
-  if (!error && touched) return 'has-success';
-  return '';
+  if (error && touched) return "has-error";
+  if (!error && touched) return "has-success";
+  return "";
 };
 
 const Input = ({ error, touched, label, ...rest }) =>

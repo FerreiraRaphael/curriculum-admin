@@ -1,8 +1,8 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import LoginForm from '../../components/loginForm';
-import { login } from '../../modules/auth';
+import React from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import LoginForm from "../../components/loginForm";
+import { login } from "../../modules/auth";
 
 class LoginFormContainer extends React.Component {
   handleSubmit(login) {
@@ -12,10 +12,10 @@ class LoginFormContainer extends React.Component {
   render() {
     return (
       <LoginForm
-        login={{ email: '', password: '' }}
+        login={{ email: "", password: "" }}
         loading={this.props.logginIn}
         handleSubmit={e => this.handleSubmit(e)}
-        formErrors={this.props.loginError ? this.props.loginError.message : ''}
+        formErrors={this.props.loginError ? this.props.loginError.message : ""}
       />
     );
   }

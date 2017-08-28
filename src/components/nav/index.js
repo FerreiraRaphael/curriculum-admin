@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const Nav = props => {
   return (
@@ -20,7 +20,7 @@ const Nav = props => {
             <span className="icon-bar" />
           </button>
           {props.brand
-            ? <Link className="navbar-brand" to={props.brandLInk || '/'}>
+            ? <Link className="navbar-brand" to={props.brandLInk || "/"}>
                 {props.brand}
               </Link>
             : null}

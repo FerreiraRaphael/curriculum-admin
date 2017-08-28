@@ -1,5 +1,5 @@
-import React from 'react';
-import LoginFormContainer from '../../container/loginForm';
+import React from "react";
+import LoginFormContainer from "../../container/loginForm";
 
 const LoginScreen = props => <LoginFormContainer />;
 

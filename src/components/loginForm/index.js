@@ -1,10 +1,10 @@
-import React from 'react';
-import { Formik } from 'formik';
-import Yup from 'yup';
-import Proptypes from 'prop-types';
-import Form from '../../components/form';
-import Button from '../../components/button';
-import Input from '../../components/input';
+import React from "react";
+import { Formik } from "formik";
+import Yup from "yup";
+import Proptypes from "prop-types";
+import Form from "../../components/form";
+import Button from "../../components/button";
+import Input from "../../components/input";
 
 const LoginForm = ({
   values,
@@ -73,8 +73,8 @@ export default Formik({
     password: props.login.password
   }),
   validationSchema: Yup.object().shape({
-    email: Yup.string().email('Email não é valido').required('Insira um Email'),
-    password: Yup.string().required('Insira uma Senha')
+    email: Yup.string().email("Email não é valido").required("Insira um Email"),
+    password: Yup.string().required("Insira uma Senha")
   }),
   handleSubmit: async (values, { props }) => {
     props.handleSubmit(values);
