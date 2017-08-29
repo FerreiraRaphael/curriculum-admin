@@ -15,9 +15,10 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",
-    "react-router-dom": "^4.1.2",
-    "react-router-redux": "next",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.10",
+    "react-toastify": "^2.0.0-rc.3",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
     "yup": "^0.22.0"
@@ -41,6 +42,7 @@
     "eslint-plugin-prettier": "^2.2.0",
     "husky": "^0.14.3",
     "lint-staged": "^4.0.3",
-    "prettier": "^1.5.3"
+    "prettier": "^1.5.3",
+    "redux-logger": "^3.0.6"
   }
 }
