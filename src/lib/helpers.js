@@ -7,3 +7,17 @@ export function transformSearch(s) {
     {}
   );
 }
+
+export function filterObjectFields(object, fields) {
+  return fields.reduce(
+    (result, field) => ({
+      ...result,
+      [field]: object[field]
+    }),
+    {}
+  );
+}
+
+export function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
