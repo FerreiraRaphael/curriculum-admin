@@ -1,10 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 const NavLink = props => {
+  const active = props.location.pathname === props.to;
   return (
-    <li className={`${props.active ? "active" : ""}`}>
+    <li className={`${active ? "active" : ""}`}>
       <Link to={props.to}>
         {props.children}
       </Link>
@@ -21,4 +23,4 @@ NavLink.propTypes = {
   ]).isRequired
 };
 
-export default NavLink;
+export default withRouter(NavLink);
