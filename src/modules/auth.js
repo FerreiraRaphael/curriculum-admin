@@ -9,11 +9,16 @@ const LOGOUT_SUCCESS = "auth/LOGOUT_SUCCESS";
 const LOADING = "auth/LOADING";
 const LOADING_SUCCESS = "auth/LOADING_SUCCESS";
 const LOADING_FAIL = "auth/LOADING_FAIL";
+const SIGNUP = "auth/SIGNUP";
+const SIGNUP_SUCCESS = "auth/SIGNUP_SUCCESS";
+const SIGNUP_FAIL = "auth/SIGNUP_FAIL";
 
 const initialState = {
   loading: false,
   logginIn: false,
   logginOut: false,
+  signingUp: false,
+  signUpError: null,
   loginError: null,
   loadError: null,
   user: null
@@ -22,6 +27,27 @@ const initialState = {
 //Reducer
 export default (state = initialState, action) => {
   switch (action.type) {
+    case SIGNUP:
+      return {
+        ...state,
+        signingUp: true,
+        signUpError: null
+      };
+
+    case SIGNUP_SUCCESS:
+      return {
+        ...state,
+        signingUp: false,
+        signUpError: null
+      };
+
+    case SIGNUP_FAIL:
+      return {
+        ...state,
+        signingUp: false,
+        signUpError: action.result
+      };
+
     case LOADING:
       return {
         ...state,
@@ -164,6 +190,35 @@ export const loadUser = () => {
     } catch (e) {
       dispatch(loadingFail(e));
       localStorage.setItem("token", "");
+    }
+  };
+};
+
+const signingUp = () => ({
+  type: SIGNUP
+});
+
+const signingUpSuccess = () => ({
+  type: SIGNUP_SUCCESS
+});
+
+const signingUpFail = error => ({
+  type: SIGNUP_FAIL,
+  result: error
+});
+
+export const signUp = user => {
+  return async dispatch => {
+    dispatch(signingUp());
+    try {
+      const result = await POST("users", user);
+      if (result.success) {
+        dispatch(signingUpSuccess());
+      } else {
+        dispatch(signingUpFail(result));
+      }
+    } catch (e) {
+      dispatch(signingUpFail(e));
     }
   };
 };
