@@ -11,7 +11,7 @@ class SignUpFormContainer extends React.Component {
     await this.props.signUp(user);
     if (this.props.signUpError) return;
     toast.success("Conta criada com sucesso !!");
-    this.props.history.push(`/login`);
+    this.props.history.push(`/login?email=${user.email}`);
   }
 
   render() {
