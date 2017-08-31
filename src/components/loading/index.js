@@ -2,7 +2,7 @@ import React from "react";
 import Proptypes from "prop-types";
 import "./style.css";
 
-const Alert = ({ size }) => {
+const Loading = ({ size }) => {
   return (
     <div className="Loading">
       <i className="fa fa-circle-o-notch fa-spin" />
@@ -10,8 +10,8 @@ const Alert = ({ size }) => {
   );
 };
 
-Alert.propTypes = {
+Loading.propTypes = {
   size: Proptypes.number
 };
 
-export default Alert;
+export default Loading;
