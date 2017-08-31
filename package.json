@@ -24,10 +24,8 @@
     "yup": "^0.22.0"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,json,css}": [
-      "eslint --fix",
-      "git add"
-    ]
+    "src/**/*.{js,jsx}": ["eslint --fix", "git add"],
+    "src/**/*.{json,css}": ["prettier", "git add"]
   },
   "scripts": {
     "precommit": "lint-staged",
