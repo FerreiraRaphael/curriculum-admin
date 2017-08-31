@@ -65,7 +65,7 @@ TH.propTypes = {
 
 const Table = ({ children }) => {
   return (
-    <table class="table table-striped table-hover ">
+    <table className="table table-striped table-hover ">
       {children}
     </table>
   );

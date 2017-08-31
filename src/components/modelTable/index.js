@@ -3,12 +3,12 @@ import PropTypes from "prop-types";
 import Table, { TBODY, TD, THEAD, TH, TR } from "../table";
 import { filterObjectFields, capitalizeFirstLetter } from "../../lib/helpers";
 
-const ModelRow = model =>
+const ModelRow = ({ model }) =>
   <TR>
     {Object.keys(model).map(field =>
-      <TR>
-        {model[field]}
-      </TR>
+      <TD key={field}>
+        {model[field].toString()}
+      </TD>
     )}
   </TR>;
 
@@ -24,10 +24,11 @@ const ModelTable = ({ models, fields }) =>
           {capitalizeFirstLetter(field)}
         </TH>
       )}
-      <TH />
     </THEAD>
     <TBODY>
-      {models.map(model => <ModelRow model={filterObjectFields(model)} />)}
+      {models.map(model =>
+        <ModelRow key={model._id} model={filterObjectFields(model, fields)} />
+      )}
     </TBODY>
   </Table>;
 
