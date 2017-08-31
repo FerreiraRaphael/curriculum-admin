@@ -1,5 +1,4 @@
 import React from "react";
-import { push } from "react-router-redux";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import {
@@ -44,7 +43,8 @@ const Home = props =>
 const mapStateToProps = state => ({
   count: state.counter.count,
   isIncrementing: state.counter.isIncrementing,
-  isDecrementing: state.counter.isDecrementing
+  isDecrementing: state.counter.isDecrementing,
+  changePage: () => {}
 });
 
 const mapDispatchToProps = dispatch =>
@@ -53,8 +53,7 @@ const mapDispatchToProps = dispatch =>
       increment,
       incrementAsync,
       decrement,
-      decrementAsync,
-      changePage: () => push("/about-us")
+      decrementAsync
     },
     dispatch
   );

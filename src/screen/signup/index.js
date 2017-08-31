@@ -1,13 +1,13 @@
 import React from "react";
-import LoginFormContainer from "../../container/loginForm";
+import SignUpFormContainer from "../../container/signupForm";
 
-const LoginScreen = props =>
+const SignUpScreen = props =>
   <div className="container">
     <div className="row">
       <div className="col-xs-12 col-md-6 col-md-offset-3">
-        <LoginFormContainer />
+        <SignUpFormContainer />
       </div>
     </div>
   </div>;
 
-export default LoginScreen;
+export default SignUpScreen;
