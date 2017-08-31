@@ -4,10 +4,10 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { ToastContainer } from "react-toastify";
 import Home from "../home";
-import About from "../about";
 import Logout from "../logout";
 import LoginScreen from "../../screen/login";
 import SignupScreen from "../../screen/signup";
+import WorksScreen from "../../screen/works";
 import Nav from "../../components/nav";
 import NavLink from "../../components/navlink";
 import RedirectRoute from "../../components/redirectRoute";
@@ -24,9 +24,15 @@ class App extends React.Component {
       ? <Loading />
       : <div>
           <Nav brand="Home">
-            <NavLink to="/about-us">About</NavLink>
             {this.props.loggedIn
-              ? <NavLink to="/logout">Logout</NavLink>
+              ? [
+                  <NavLink key="works" to="/works">
+                    Trabalhos
+                  </NavLink>,
+                  <NavLink key="logout" to="/logout">
+                    Logout
+                  </NavLink>
+                ]
               : [
                   <NavLink key="signup" to="/signup">
                     Cadastrar
@@ -47,44 +53,47 @@ class App extends React.Component {
               closeOnClick
               pauseOnHover
             />
-            <div className="container">
-              <div className="row">
-                <div className="col-xs-12 col-md-6 col-md-offset-3">
-                  <Route exact path="/" component={() => <Home />} />
-                  <Route exact path="/about-us" component={About} />
-                  <Route
-                    exact
-                    path="/login"
-                    component={() =>
-                      <RedirectRoute
-                        Element={<LoginScreen />}
-                        to="/"
-                        redirect={this.props.loggedIn}
-                      />}
-                  />
-                  <Route
-                    exact
-                    path="/logout"
-                    component={() =>
-                      <RedirectRoute
-                        Element={<Logout />}
-                        to="/login"
-                        redirect={!this.props.loggedIn}
-                      />}
-                  />
-                  <Route
-                    exact
-                    path="/signup"
-                    component={() =>
-                      <RedirectRoute
-                        Element={<SignupScreen />}
-                        to="/"
-                        redirect={this.props.loggedIn}
-                      />}
-                  />
-                </div>
-              </div>
-            </div>
+            <Route exact path="/" component={() => <Home />} />
+            <Route
+              exact
+              path="/works"
+              component={() =>
+                <RedirectRoute
+                  Element={<WorksScreen />}
+                  to="/"
+                  redirect={!this.props.loggedIn}
+                />}
+            />
+            <Route
+              exact
+              path="/login"
+              component={() =>
+                <RedirectRoute
+                  Element={<LoginScreen />}
+                  to="/"
+                  redirect={this.props.loggedIn}
+                />}
+            />
+            <Route
+              exact
+              path="/logout"
+              component={() =>
+                <RedirectRoute
+                  Element={<Logout />}
+                  to="/login"
+                  redirect={!this.props.loggedIn}
+                />}
+            />
+            <Route
+              exact
+              path="/signup"
+              component={() =>
+                <RedirectRoute
+                  Element={<SignupScreen />}
+                  to="/"
+                  redirect={this.props.loggedIn}
+                />}
+            />
           </main>
         </div>;
   }
